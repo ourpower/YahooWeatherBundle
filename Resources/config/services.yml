@@ -1,0 +1,11 @@
+services:
+    yahoo_Weather:
+       class: My\Bundle\WeatherBundle\YahooService
+       arguments: ['@parse_Data', '@buzz']
+
+    parse_Data:
+       class: My\Bundle\WeatherBundle\YahooWeatherParser
+
+    nfq.weather:
+       class: My\Bundle\WeatherBundle\WeatherLoader
+       arguments: ['@yahoo_weather']

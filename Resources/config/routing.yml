@@ -1,0 +1,3 @@
+my_weather_homepage:
+    path:     /weather/
+    defaults: { _controller: MyWeatherBundle:Default:index }
