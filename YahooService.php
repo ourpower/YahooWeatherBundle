@@ -10,15 +10,23 @@ namespace My\Bundle\WeatherBundle;
 
 use Buzz\Browser;
 
-class YahooService {
+class YahooService implements WeatherServiceInterface {
 
+    /**
+     * @param YahooWeatherParser $parser
+     * @param Browser $browser
+     */
     public function __construct(YahooWeatherParser $parser, Browser $browser)
     {
         $this->parser = $parser;
         $this->browser = $browser;
     }
 
-    public function getYahooWeather($coordinates)
+    /**
+     * @param $coordinates
+     * @return mixed
+     */
+    public function getWeatherByCoordinates($coordinates)
     {
 
         $url = "http://query.yahooapis.com/v1/public/yql?q=";

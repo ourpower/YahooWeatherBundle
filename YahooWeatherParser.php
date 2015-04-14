@@ -11,6 +11,10 @@ namespace My\Bundle\WeatherBundle;
 
 class YahooWeatherParser {
 
+    /**
+     * @param $json
+     * @return mixed
+     */
     public function parseData($json){
 
             $object = json_decode($json);
